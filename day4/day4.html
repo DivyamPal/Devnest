@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Clock</title>
+	<style >
+		div.clock{
+			width: 500px;
+			height: 500px;
+			background-image: url("https://images.wallpapersden.com/image/download/sasuke-uchiha_a2dtZW2UmZqaraWkpJRmbmdlrWZlbWU.jpg");
+			background-position: center;
+			display: inline-block;
+			border: 10px solid black;
+			border-radius: 50%;
+			padding: 20px;
+		}
+		div.sec, div.min, div.hour{
+			line-height: 45px;
+			position: relative;
+			transform-origin: bottom;
+		}
+		div.sec{
+			height: 250px;
+			width: 5px;
+			left: 245px;
+			background: white;
+			z-index: 3;
+			animation: sec_anim 60s linear infinite;
+		}
+		div.min{
+			height: 250px;
+			width: 10px;
+			left: 242.5px;
+			top: -250px;
+			background: white;
+			z-index: 2;
+			animation: min_anim 600s linear infinite;
+		}
+		div.hour{
+			height: 180px;
+			width: 14px;
+			left: 240px;
+			top: -430px;
+			background: white;
+			z-index: 1;
+			animation: hour_anim 60000s linear infinite;
+		}
+		@keyframes sec_anim{
+			from{transform: rotateZ(0deg);}
+			to{transform: rotateZ(360deg);}
+		}
+		@keyframes min_anim{
+			from{transform: rotateZ(0deg);}
+			to{transform: rotateZ(360deg);}
+		}
+		@keyframes hour_anim{
+			from{transform: rotateZ(0deg);}
+			to{transform: rotateZ(360deg);}
+		}
+
+		body{
+			text-align: center;
+			background: black;
+		}
+	</style>
+</head>
+<body>
+<div class="clock">
+	<div class="sec"></div>
+	<div class="min"></div>
+	<div class="hour"></div>
+</div>
+</body>
+</html>
