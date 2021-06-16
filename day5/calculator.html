@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Calculator</title>
+	<style type="text/css">
+		button{
+			color: white;
+			padding: 10px;
+			border-color: white;
+			border-width: 5px;
+			text-align: center;
+			background: maroon;
+			border-radius: 20%;
+			font-family: comic sans ms;
+			font-size: 20px;
+		}
+		body{
+			color: red;
+			font-family: comic sans ms;
+			font-size: 30px;
+			background-image: url("https://images.wallpapersden.com/image/download/sasuke-uchiha_a2dtZW2UmZqaraWkpJRmbmdlrWZlbWU.jpg");
+			background-position: center;
+		}
+		input{
+			width: 150px;
+			position: relative;
+			height: 19px;
+		}
+		select{
+			color: white;
+			padding: 10px;
+			border-color: white;
+			border-width: 5px;
+			text-align: center;
+			background: maroon;
+			border-radius: 20%;
+			font-family: comic sans ms;
+			font-size: 20px
+		}
+	</style>
+	<script type="text/javascript">
+	function cal() {
+		var a,b,c;
+		a=parseFloat(document.getElementById('n1').value);
+		b=parseFloat (document.getElementById('n2').value);
+		c=document.getElementById('Operator').value; 
+		if (c ==='+') {
+			document.getElementById('result').value = a+b;
+		}
+		if (c ==='-') {
+			document.getElementById('result').value = a-b;
+		}
+		if (c ==='*') {
+			document.getElementById('result').value = a*b;
+		}
+		if (c ==='/') {
+			document.getElementById('result').value = a/b;
+		}
+	}
+</script>
+</head>
+<body>
+	Number 1 <input type="text" id="n1"><br><br>
+	Number 2 <input type="text" id="n2"><br><br>
+	<select id="Operator">
+		<option value="+">+</option>
+		<option value="-">-</option>
+		<option value="*">*</option>
+		<option value="/">/</option>
+	</select>
+	<button onclick="cal();">Result</button>
+	<input type="text" id="result">
+	
+
+</body>
+</html>
