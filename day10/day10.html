@@ -1,0 +1,211 @@
+<html>
+    <head>
+        <title>nothing</title>
+        <style>
+            /* .flip-container {
+    perspective: 1000px;
+}
+.flip-container:hover .flipper,
+.flip-container.hover .flipper {
+    transform: rotateY(180deg);
+}
+.flip-container,
+.front,
+.back {
+    width: 320px;
+    height: 480px;
+}
+.flipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.front {
+    z-index: 2;
+    transform: rotateY(0deg);
+}
+.back {
+    transform: rotateY(180deg);
+} */
+            body{
+                /* padding-left: 350px; */
+                padding-top: 11px;
+                background-image: url("https://a-static.besthdwallpaper.com/sasuke-uchiha-lightning-blade-from-naruto-shippuden-for-desktop-wallpaper-1440x900-56037_4.jpg");
+                /* background-position: center; */
+            }
+            .gridd{
+                width: 670px;
+                height: 600px;
+                border-radius: 10px;
+                display: grid;
+                grid-auto-rows: 60px;
+                grid-auto-columns: 60px;
+                grid-template: 60px/auto auto auto auto auto ;
+                grid-row-gap : 160px;
+                grid-column-gap: 20px ;
+                background-color:transparent;
+                /* background-image: url("https://images.wallpapersden.com/image/download/sasuke-uchiha_a2dtZW2UmZqaraWkpJRmbmdlrWZlbWU.jpg"); */
+                border: 3px;
+                padding: 9px;
+                
+            }
+            .gridd> div{
+                background-image: url("c.jpg");
+                border-radius: 10%; 
+                width: 240px;
+                height: 200px;
+                /* backface-visibility: hidden; */
+            }
+            .moves{
+                font-family: comic sans ms;
+                font-size: 20px;
+                color: lawngreen;
+                align-items: center;
+                border: 5px solid white;
+                width: 80px;
+                height: 30px;
+                left: 450px;
+                position: relative;
+                top: -155px;
+            }
+            .accuracy{
+                font-family: comic sans ms;
+                color: lawngreen;
+                align-items: center;
+                font-size: 20px;
+                border: 5px solid white;
+                width: 90px;
+                position: relative;
+                height: 30px;
+                left: 850px;
+                top: -200px;
+            }
+            .noOfMoves{
+                font-family: comic sans ms;
+                color: red;
+                align-items: center;
+                position: relative;
+                font-size: 30px;
+                top: -220px;
+                left: 450px;
+
+            }
+            .accu{
+                font-family: comic sans ms;
+                position: relative;
+                font-size: 30px;
+                font-weight: bold;
+                color: red;
+                align-items: center;
+                left: 840px;
+                top: -300px;
+            }
+        </style>
+        <script>
+            var itemm=[ ];
+            var moves=0,correct=0,acc=0;
+            var flag1=-1,flag2=-1;
+            itemm[0]="url(\"1.jpg\")";
+            itemm[1]="url(\"1.jpg\")";
+            itemm[2]="url(\"2.jpg\")";
+            itemm[3]="url(\"2.jpg\")";
+            itemm[4]="url(\"3.jpg\")";
+            itemm[5]="url(\"3.jpg\")";
+            itemm[6]="url(\"4.jpg\")";
+            itemm[7]="url(\"4.jpg\")";
+            itemm[8]="url(\"5.jpg\")";
+            itemm[9]="url(\"5.jpg\")";
+
+            itemm = itemm.sort(() => Math.random() - 0.5)
+
+            function c(classname){
+
+
+                element=document.getElementsByClassName(classname);
+                n=classname
+                
+                
+
+                console.log(n);
+                element[0].style.backgroundImage= itemm[n];
+                
+                if(flag1==-1){
+                    flag1=n;
+                }
+                else if(n != flag1){
+                    flag2=n;
+                }
+                console.log(flag1,flag2);
+                if(flag1!=-1 && flag2!=-1){
+
+                    if(itemm[flag1] == itemm[flag2]){
+                        console.log("hi");
+                        class1=flag1;
+                        class2=flag2;
+
+                        element1=document.getElementsByClassName(class1);
+                        element2=document.getElementsByClassName(class2);
+
+                        element1[0].style.backgroundImage= "url(\"t.jpg\")";
+                        element2[0].style.backgroundImage= "url(\"t.jpg\")";
+                        
+                        itemm[flag1]="url(\"t.jpg\")";
+                        itemm[flag2]="url(\"t.jpg\")";
+
+                        flag1=-1;
+                        flag2=-1;
+
+                        moves+=1;
+                        correct+=1;
+                    }
+
+                    //setTimeout(()=>console.log('I am setimeout'),3000);
+                    else{
+
+                    class1=flag1;
+                    class2=flag2;
+
+                    element1=document.getElementsByClassName(class1);
+                    element2=document.getElementsByClassName(class2);
+
+                    //element1[0].style.backgroundImage= "url(\"c.jpg\")";
+                    setTimeout(()=>element1[0].style.backgroundImage= "url(\"c.jpg\")",500);
+                    setTimeout(()=>element2[0].style.backgroundImage= "url(\"c.jpg\")",1000);
+                    //element1[0].style.backgroundImage= "url(\"c.jpg\")";
+                     //element2[0].style.backgroundImage= "url(\"c.jpg\")";
+
+                    flag1=-1;
+                    flag2=-1;
+                    moves+=1;
+                    }
+                }
+
+                document.getElementsByClassName("moves")[0].innerHTML=moves;
+                if  (correct == 5){
+                     acc=(5/moves)*100;
+                    }
+
+                document.getElementsByClassName("accuracy")[0].innerHTML=acc;
+            }
+        </script>
+    </head>
+    <body>
+        <div class="gridd">
+            <div class="0" onclick="c(this.getAttribute('class'));"></div>
+            <div class="1" onclick="c(this.getAttribute('class'));"></div>
+            <div class="2" onclick="c(this.getAttribute('class'));"></div>
+            <div class="3" onclick="c(this.getAttribute('class'));"></div>
+            <div class="4" onclick="c(this.getAttribute('class'));"></div>
+            <div class="5" onclick="c(this.getAttribute('class'));"></div>
+            <div class="6" onclick="c(this.getAttribute('class'));"></div>
+            <div class="7" onclick="c(this.getAttribute('class'));"></div>
+            <div class="8" onclick="c(this.getAttribute('class'));"></div>
+            <div class="9" onclick="c(this.getAttribute('class'));"></div>
+        </div>
+        <div class="moves">Moves</div>
+        <div class="accuracy">Accuracy</div>
+        <p class="noOfMoves">Moves</p>
+        <p class="accu">Accuracy</p>
+    </body>
+</html>
