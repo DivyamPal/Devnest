@@ -1,0 +1,173 @@
+<html>
+<head>
+	<title>KUIZZZ</title>
+	<style>
+        body
+        {
+            font-family: 'comic sans ms';
+            background-image: url("sasuke.jpg");
+            background-repeat: no-repeat;
+            background-size: 1600px 800px   
+        }
+        #heading
+        {     position: absolute;
+                left:38%;
+                width: 300px;
+                background: rgba(162, 8, 252, 0.5);
+                padding: 20px;
+                border: 1px solid #00038c;
+                box-shadow: 0 0 8px 3px #fff;
+        }
+        #text
+        {
+            text-align: center;
+        }
+        #quiz
+        {
+            height: 330px;
+            width: 60%;
+            position: absolute;
+            left:20%;
+            top: 30%;
+            transform: translateX(-50) translateY(-50);
+            background: rgba(156, 12, 240, 0.5);
+            padding: 20px;
+            border: 1px solid #00038c;
+            box-shadow: 0 0 8px 3px #fff;
+            
+        }
+        #question
+        {
+            padding: 20px;
+            font-size: 22px;
+            background: maroon;
+            border-radius: 10px;
+            margin: 10px 0 10px 0;
+            color: white;
+        }
+        .option{
+            width: 470px;
+            display: inline-block;
+            padding: 10px 0 10px 0;
+            background: rgba(255,255,255,0.5);
+            margin: 10px 0 10px 10px;
+            color: black;
+            border: 2px solid #008CBA; 
+            border-radius: 5px;
+        }
+
+        
+        #next
+        {
+            font-family: 'comic sans ms', cursive; 
+            background-color:cyan;
+            width:13%;
+            height: 4%px;
+            border: 1px solid maroon;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+            cursor: pointer;;
+            float: right;
+            padding: 10px 10px;
+            
+        }
+        
+        
+        #result
+        {
+            font-size:100px;
+            text-align: center;
+            height: 100px;
+            width: 60%;
+            position: absolute;
+            left:20%;
+            top: 30%;
+            transform: translateX(-50) translateY(-50);
+            background: rgba(200, 11, 224, 0.5);
+            padding: 20px;
+            border: 1px solid maroon;
+            box-shadow: 0 0 8px 3px #fff;
+        }
+
+
+    </style>
+    <script>
+
+        var questions = [
+    ["Which Hokage sealed the nine-tailed fox inside Naruto?", "fourth Hokage", "third Hokage", "second Hokage","None", "1"],
+    ["Who tricked Naruto into stealing a sacred scroll?", "Iruka", "Mizuki", "Zabuza", "Sasuke","2"],
+    ["Naruto first shows his nine-tails chakra when he fights who?", "Neji Hyuuga", "Haku", "Gaara", "Sasuke Uchiha","2"],
+    ["What is the forbidden technique used by Rock Lee that he used on Dosu and Gaara?", "Shadow Lotus", "Primary Lotus", "Fiery Lotus", "Lotus of Destruction","2"],
+    ["Every member of Akatsuki is a what?", "swordsman", "kage", "S- ranked criminal", "kunoichi","3"],
+    ];
+
+    var quiz=document.getElementById("quiz");
+    var ques= document.getElementById("question");
+    var opt1=document.getElementById("option1");
+    var opt2=document.getElementById("option2");
+    var opt3=document.getElementById("option3");
+    var opt4=document.getElementById("option4");
+    var res=document.getElementById("result");
+    var nextbutton= document.getElementById("next");
+
+    var tques=questions.length;
+    var score=0;
+    var quesindex=0;
+    {         
+	      quiz.style.display='none';
+          result.style.display='';
+          var f=score/tques;
+          result.textContent="SCORE ="+f*100;
+          q.style.display="none";
+}
+    function give_ques(quesindex) 
+    {
+        ques.textContent=quesindex+1+". "+questions[quesindex][0];
+        opt1.textContent=questions[quesindex][1];
+        opt2.textContent=questions[quesindex][2];
+        opt3.textContent=questions[quesindex][3];
+        opt4.textContent=questions[quesindex][4];
+        return;
+    };
+    give_ques(0);
+    function nextques()
+    {
+        var selected_ans= document.querySelector('input[type=radio]:checked');
+        if(!selected_ans)
+            {alert("SELECT AN OPTION");return;}
+
+        if(selected_ans.value==questions[quesindex][5])
+            {score=score+1;}
+        selected_ans.checked=false;
+            quesindex++;
+            if(quesindex==tques-1)
+                nextbutton.textContent="Finish";
+            var f=score/tques;
+            if(quesindex==tques)
+            {
+            q.style.display='none';
+            quiz.style.display='none';
+            result.style.display='';
+            result.textContent="SCORED:"+(f*100).toFixed(2)+"%";
+                return;
+            }
+            give_ques(quesindex);
+
+    }
+    </script>
+</head>
+<body>
+	<div id="heading"><h1 id="text">Naruto Quiz<h1></div>
+			<div id="quiz">
+				<div id="question"></div>
+				<label class="option"><input type="radio" name="option" value="1" /><span id="option1"></span></label>
+				<label class="option"><input type="radio" name="option" value="2" /><span id="option2"></span></label>
+				<label class="option"><input type="radio" name="option" value="3" /><span id="option3"></span></label>
+				<label class="option"><input type="radio" name="option" value="4" /><span id="option4"></span></label>
+				<button id="next" onclick="nextques();">NEXT QUESTION</button>
+			</div>
+			<div id="result" style="display:none">
+			</div>
+
+
+</body>
+</html>
