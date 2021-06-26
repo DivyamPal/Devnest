@@ -1,0 +1,130 @@
+<html>
+<head>
+    <title>To Do List</title>
+    <script src="https://kit.fontawesome.com/a81368914c.js" crossorigin="anonymous"></script>
+    <style>
+
+        body{
+            background-image: url("1.jpg");
+            background-size: 100% 100%;
+            box-sizing: border-box;
+            font-family: comic sans ms;
+
+        }
+        h1{
+            text-align: center;
+            margin: 16px;
+        }
+        .title{
+            color: #DE354C;
+            font-weight: 500;
+            font-size: 120px;
+        }
+        .inputlist{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .input{
+            padding: 0.5rem 1rem;
+            outline: white;
+            height: 50px;
+            border-radius: 10px;
+            width: 300px;
+            margin: 2px;
+            font-size: 25px;
+        }
+        .add{
+            border-radius: 10px;
+            height: 50px;
+            background-color: #DE354C;
+            cursor: pointer;
+            width: 50px;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+            position: relative;
+            align-items: center;
+            text-align: center;
+            display: flex;
+            width:30%;
+            color:white;
+            background: rgba(156, 12, 240, 0.5);
+            border: 1px solid #00038c;
+            box-shadow: 0 0 8px 3px #fff;
+            left: 460px;
+            font-size: 40px;
+            border-radius: 10%;
+        }
+        .remove{
+            display: flex;
+            /* margin-top: 30px; */
+            color: white;
+            background-color: #DE354C;
+            padding: 8.5px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 27px;
+            
+        }
+        /* .container{
+            position: relative;
+            align-items: center;
+            text-align: center;
+            display: flex;
+            width:30%;
+            color:white;
+            background: rgba(156, 12, 240, 0.5);
+            border: 1px solid #00038c;
+            box-shadow: 0 0 8px 3px #fff;
+            left: 460px;
+            font-size: 40px;
+        } */
+    </style>
+    <script>
+        var s=""
+
+        function add(){
+        var x =document.getElementsByClassName("input")[0].value;
+        s=s + x;
+        s = s + "<br>"
+        
+        //console.log(s)
+
+        localStorage.setItem("p" , s);
+        console.log( document.getElementsByClassName("container"))
+        listt = document.getElementsByClassName("container")
+        showw();
+        }
+        function removeall(){
+            localStorage.removeItem("p")
+            s=""
+
+        }
+
+        function showw()
+        {
+            todolist= localStorage.getItem("p")
+            listt = document.getElementsByClassName("container");
+            listt[0].innerHTML=todolist;
+        }
+
+    </script>
+</head>
+<body>
+    <div class="main">
+        <h1><span class="title"><i class="fas fa-clipboard-list"></i></span></h1>
+        <div class="inputlist">
+            <input type="text" class="input" placeholder="Enter here...">
+            <button class="add" onclick="add()";><i class="fas fa-plus"></i></button>
+            <button class = "remove" onclick="removeall()" >Delete</button>
+        </div>
+        <div class="container">    </div>
+    </div>
+    <!-- <button class = "remove" onclick="removeall()" >Delete</button> -->
+</body>
+</html>
