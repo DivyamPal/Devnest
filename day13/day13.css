@@ -1,0 +1,111 @@
+*{
+    padding: 0; 
+    margin: 0; 
+
+}
+
+body{
+    display: flex; 
+    font-size: 25px;
+    color: rgb(241, 161, 11);
+    text-shadow:4px 2px cornsilk;
+    justify-content: center; 
+    flex-direction: column; 
+    align-items: center; 
+    background-image: url("3.jpg");
+    background-repeat: no-repeat;
+    background-size: 1365px 800px;  
+    font-family: 'Yellowtail', cursive;
+}
+
+button {
+    /* background-color: #4CAF50; Green */
+    border: none;
+    /* color: white; */
+    font-family: comic sans ms;
+    padding: 5px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 27px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: transparent; 
+  color: yellow; 
+  border: 2px solid #008CBA;
+    
+}
+
+button:hover {
+    background-color: #008CBA;
+  color: white;
+}
+.enterprofile{
+    width: 300px;
+    height: 47px;
+    border-radius: 5%;
+    color: white;
+    /* border: 2px solid #f8f8f8; */
+    /* box-shadow: 0 0 14px 3px rgb(46, 235, 8); */
+    /* background: rgba(19, 183, 224, 0.5); */
+    border: none;
+    background-color: transparent;
+    font-family: comic sans ms;
+    font-size: larger;
+
+}
+
+#temp{
+    margin: 0 auto;
+    font-size: 2.2em;
+    text-align: center;
+    color: #fff;
+    font-size: 3em;
+    font-family: 'Montserrat', sans-serif;
+    text-shadow:4px 2px black;
+}
+#title{
+    font-size: 4em;
+    
+}
+#description{
+    font-size: 2em;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    text-shadow:4px 2px black;
+}
+#location{
+    font-size: 2em;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    text-shadow:4px 2px black;
+}
+
+/* #profilepic{
+    border-color: aliceblue;
+    border-radius: 50%;
+    border: 4px solid #8c0075;
+    box-shadow: 0 0 18px 7px #fff;
+
+} */
+
+/* .result{
+    /* border: 4px solid #8c0075;
+    box-shadow: 0 0 18px 7px #fff; */
+    /* width: 800px;
+    height: 400px;
+    padding: 10px; */
+    /* border-radius: 5%;
+    background: rgba(234, 174, 247, 0.5); */
+/* } */ 
+
+/* .display{
+    border: 4px solid #080007;
+    width: 400px;
+    height: 350px;
+    display: flex; 
+    justify-content: left; 
+    flex-direction: row; 
+    /* left: 700px; */
+/* 
