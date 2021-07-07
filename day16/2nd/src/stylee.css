@@ -1,0 +1,36 @@
+.meme{
+    position: relative;
+    top: 200px;
+    left:40%;
+    border: 10px solid black;
+    box-shadow: 10px 10px 10px;
+    height: 160px;
+    width: 160px;
+}
+.check {
+    display: inline-flex;
+    float: left;
+    /* grid-template-rows: 20px/ auto auto auto auto auto auto auto auto;  */
+    /* grid-template-columns: /auto auto auto auto auto auto auto auto; */
+    height: 20px;
+    width: 20px;
+}
+.check:nth-child(odd){
+    background-color: black;
+}
+.check:nth-child(even){
+    background-color: white;
+}
+
+.checkk {
+    display: inline-flex;
+    float: left;
+    height: 20px;
+    width: 20px;
+}
+.checkk:nth-child(odd){
+    background-color: white;
+}
+.checkk:nth-child(even){
+    background-color: rgb(12, 12, 12);
+}

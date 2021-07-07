@@ -1,0 +1,26 @@
+
+.meme{
+    position: relative;
+    top: 130px;
+    left: 480px;
+    color: red;
+    border: 2px solid rgb(17, 3, 3,0.5);
+    box-shadow:10px 10px 10px ;
+    display: inline-block;
+    /* background-color: rgba(99, 68, 129, 0.4); */
+    background: url("1.jpg");
+    font-family: comic sans ms;
+    background-size: 370px 250px;
+    background-repeat: no-repeat;
+    height: 300px;
+    width: 370px;
+    /* display: flex; */
+}
+/* .meme img {
+    width: 350px;
+    height: 200px;
+} */
+.meme h2 {
+    position: relative;
+    bottom: -215px;
+}
