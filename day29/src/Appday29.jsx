@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "./App.css"
+import "./Styleday29.css"
 import Form from './components/form';
 import WeatherCard from './components/WeatherCard';
 import { useSelector } from "react-redux";
