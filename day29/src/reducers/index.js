@@ -13,7 +13,7 @@
 
 import { combineReducers } from "redux";
 import placeReducer from "./placeReducer";
-import placeDataReducer from "./placeDateReducer";
+import placeDataReducer from "./placeDataReducer";
 import themeReducer from "./theme";
 
 const rootReducer = combineReducers({
