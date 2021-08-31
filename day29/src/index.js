@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from "react-redux";
-import store from "./redux/store";
+// import store from "./redux/store";
 
 //  import App from "./app";
 // import App from "./Appday17";
@@ -13,7 +13,7 @@ import store from "./redux/store";
 // import App from "./Appday24"
 // import App from "./Eco"
 // import App from "./Appanime"
-// import store from "./store"
+import store from "./store"
 // import App from "./Appday26"
 // import App from "./Appday28"
 import App from "./Appday29"
